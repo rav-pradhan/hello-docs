@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% include "partials/meta.html" %}
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css">
+    <link rel="stylesheet" href="/css/main.css" />
+    {% if syntaxHighlights %}
+    <link rel="preload" as="style" href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css"
+    onload="this.onload=null; this.rel='stylesheet'">
+    <noscript>
+        <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-tomorrow.css" rel="stylesheet" />
+    </noscript>
+    {% endif %}
+</head>
+
+<body>
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js' : 'js');</script>
+    <div class="wrapper">
+        <div class="stack">
+            {% include "partials/siteHeader.html" %}
+            <div class="with-sidebar">
+                <div>
+                    <div>{% include "partials/sidebarNav.html" %}</div>
+                    <div>{% block content %}{% endblock %}</div>
+                </div>
+            </div>
+            {% include "partials/siteFooter.html" %}
+        </div>
+    </div>
+</body>
+
+</html>

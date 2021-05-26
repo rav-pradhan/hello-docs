@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Roboto:wght@400;700&display=swap');
+
+h1,h2,h3,h4 { font-family: 'Inconsolata', sans-serif; }
+
+h1 {
+	font-size: $size-600;
+	margin: 0 0 2rem 0;
+	max-width: 20ch;
+}
+
+h2 {
+	margin-top: $size-900;
+	font-size: $size-600;
+	max-width: 40ch;
+}
+
+h3 {
+	margin-top: $size-600;
+	font-size: $size-500;
+	max-width: 40ch;
+}
+
+p {
+	margin: 1.2rem 0;
+	max-width: 60ch;
+	word-break: break-word;
+}
+ul {
+	margin: 1.2rem 0;
+}
+ol {
+	margin: 1.2rem 0;
+	padding-left: 2rem;
+	-webkit-padding-start: 5%;
+	-webkit-padding-end: 5%;
+}
+li {
+	margin: 1rem 0;
+	max-width: 60ch;
+	p {
+		margin-bottom: 0.5rem;
+		margin-top: 0.5rem;
+	}
+}
+a {
+	color: $dark-grey;
+	&:hover {
+		font-weight: 700;
+	}
+
+	&:focus {
+		font-weight: 700;
+	}
+}
+
+code {
+	font-family: 'SF Mono', menlo, inconsolata, monospace;
+	font-size: calc(.9rem - 2px);
+	color: #555;
+	background-color: #f0f0f0;
+	padding: 0.2rem 0.4rem;
+	border-radius: 2px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+small {
+	font-size: $size-300;
+}
+pre {
+	font-size: $size-400 !important;
+	border-radius: 8px !important;
+	margin: 2.4rem 0 !important;
+	max-width: 80ch;
+	code {
+		padding: 0;
+	}
+}
+
+code[class*="language-"], pre[class*="language-"] {
+	white-space:pre-wrap !important;
+	word-break: break-word;
+}
+
+blockquote {
+	border-left: 4px solid $dark-grey;
+	margin: 2rem 0;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	footer {
+		font-size: 1.1rem;
+		text-align: right;
+	}
+}
+figure {
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	margin: 0 0 3rem 0;
+}
+table {
+	border-collapse: collapse;
+	font-size: 1.125rem;
+	margin: 2rem 0;
+}
+th {
+	border-bottom: 2px solid #cccccc;
+	padding: 0.4rem 0.8rem;
+}
+td {
+	padding: 0.4rem 0.8rem;
+}
+
+@media (min-width: 45em) {
+	h1 {
+	  font-size: $size-800;
+	}
+  
+	h2 {
+	  font-size: $size-600;
+	}
+  
+	p {
+	  word-break: normal;
+	  font-size: $size-500;
+	}
+}

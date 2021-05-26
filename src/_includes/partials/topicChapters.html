@@ -1,0 +1,14 @@
+{% set currentTopicID = topicID %}
+<hr>
+<section class="stack stack--margin-free">
+    <h3>Chapters for: {{ topic }}</h3>
+    <ul>
+        {% for topic in collections.topics %}
+            {% if topic.ID == currentTopicID %}
+                {% for chapter in topic.chapters %}
+                <li><a href={{chapter.url}}>{{ chapter.title }}</a></li>
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    </ul>
+</section>

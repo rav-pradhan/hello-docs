@@ -1,0 +1,26 @@
+@use "sass:math";
+
+.with-sidebar {
+    overflow: hidden;
+
+    > * {
+        display: flex;
+        flex-wrap: wrap;
+        margin: math.div($s1, 2) * -1;
+
+        @media (max-width: 40em) {
+            flex-direction: column;
+        }
+    }
+
+    > * > * {
+        margin: math.div($s1, 2);
+        flex-grow: 1;
+    }
+
+    > * > :last-child {
+        flex-basis: 0;
+        flex-grow: 999;
+        min-width: 40%;
+    }
+}

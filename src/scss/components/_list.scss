@@ -1,0 +1,23 @@
+.list {
+    &__entry {
+        &--nested {
+            li {
+                margin: 0;
+                list-style-type: square;
+                font-size: $size-400;
+                max-width: 30ch;
+                padding: $s-3 $s1;
+            }
+        }
+
+        &--selected {
+            background-color: $dark-grey;
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+
+        }
+    }
+}

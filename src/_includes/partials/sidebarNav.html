@@ -1,0 +1,25 @@
+<details open aria-label="Primary navigation for topics" class="topics">
+    <summary class="topics__details">Topics</summary>
+    <ul>
+        {% for topic in collections.topics %}
+        <li>
+            <h3>{{ topic.title }}</h3>
+
+            <ul class="list__entry--nested">
+                {% for chapter in topic.chapters %}
+                {% if chapter.title == title %}
+                <li class="list__entry--selected">
+                    <a href={{chapter.url}}><strong>{{ chapter.title }}</strong></a>
+                </li>
+
+                {% else %}
+                <li>
+                    <a href={{chapter.url}}>{{ chapter.title }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</details>
