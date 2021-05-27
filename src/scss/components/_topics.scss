@@ -4,6 +4,7 @@
     min-height: 0;
     overflow-y: scroll;
     max-height: 40vh;
+    width: 12rem;
 
     @media (min-width: 40em) {
         border-bottom: 0;
@@ -17,7 +18,8 @@
     }
 
     &__details {
-        padding: $s0 0;
+        padding: $s0 0 0 0;
+        cursor: pointer;
     }
 
     ul {
