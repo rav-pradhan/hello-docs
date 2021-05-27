@@ -2,12 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding-top: $s1;
     padding-top: 0;
-
-    @media (min-width: 40em) {
-        padding-top: 0;
-    }
 
     a {
         color: $dark-grey;
