@@ -1,0 +1,37 @@
+.collapsible {
+    margin: $s1 0;
+    display: inline-block;
+    border-bottom: 2px solid $dark-grey;
+    border-top: 2px solid $dark-grey;
+    padding: $s1 0;
+    width: 100%;
+
+    &__summary {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        cursor: pointer;
+        font-size: $size-600;
+        text-decoration-style: solid;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &::after {
+            content: ' ►';
+        }
+    }
+
+    &__text {
+        padding: $s-1 0;
+    }
+    
+    &[open] {
+        padding: $s1 0 0 0;
+    }
+
+    &[open] summary:after {
+        content: ' ▼';
+    }
+}

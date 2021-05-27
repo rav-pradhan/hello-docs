@@ -1,6 +1,7 @@
 const minifyHTML = require("./src/transforms/minifyHTML");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const warning = require("./src/_includes/shortcodes/warning");
+const collapsible = require("./src/_includes/shortcodes/collapsible");
 const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = (config) => {
@@ -18,6 +19,7 @@ module.exports = (config) => {
 
     config.setUseGitIgnore(false);
     config.addShortcode("warning", warning)
+    config.addPairedShortcode("collapsible", collapsible)
 
     return {
         dataTemplateEngine: "njk",

@@ -1,8 +1,9 @@
 .warning {
+    display: flex;
+    justify-content: space-between;
     position: relative;
     margin: $s0 0;
     padding: $s-1;
-    // border-left: 4px solid $dark-grey;
 
     &__icon {
         display: inline-block;
@@ -17,7 +18,7 @@
         font-size: $size-600;
         font-weight: 700;
         text-align: center;
-        margin-top: -4px;
+        align-self: center;
     }
 
     &__text {
