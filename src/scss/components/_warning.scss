@@ -1,0 +1,27 @@
+.warning {
+    position: relative;
+    margin: $s0 0;
+    padding: $s-1;
+    // border-left: 4px solid $dark-grey;
+
+    &__icon {
+        display: inline-block;
+        position: absolute;
+        line-height: 34px;
+        border-radius: 50%;
+        left: 0;
+        background-color: $dark-grey;
+        color: $off-white;
+        height: 35px;
+        width: 35px;
+        font-size: $size-600;
+        font-weight: 700;
+        text-align: center;
+        margin-top: -4px;
+    }
+
+    &__text {
+        padding-left: $s2;
+        line-height: 1.3;
+    }
+}
