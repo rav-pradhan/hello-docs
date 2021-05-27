@@ -1,13 +1,11 @@
 .site-running {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: baseline;
     padding-top: $s1;
+    padding-top: 0;
 
     @media (min-width: 40em) {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: baseline;
         padding-top: 0;
     }
 

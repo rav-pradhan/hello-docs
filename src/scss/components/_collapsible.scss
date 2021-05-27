@@ -11,27 +11,31 @@
         justify-content: space-between;
         list-style: none;
         cursor: pointer;
-        font-size: $size-600;
+        font-size: $size-500;
         text-decoration-style: solid;
+
+        @media (min-width: 40em) {
+            font-size: $size-600;
+        }
 
         &::-webkit-details-marker {
             display: none;
         }
 
         &::after {
-            content: ' ►';
+            content: " ►";
         }
     }
 
     &__text {
         padding: $s-1 0;
     }
-    
+
     &[open] {
         padding: $s1 0 0 0;
     }
 
     &[open] summary:after {
-        content: ' ▼';
+        content: " ▼";
     }
 }

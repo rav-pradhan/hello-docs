@@ -4,13 +4,15 @@
     min-height: 0;
     overflow-y: scroll;
     max-height: 40vh;
-    width: 12rem;
+    width: 100%;
+    
 
     @media (min-width: 40em) {
         border-bottom: 0;
         background-color: white;
         max-height: unset;
         overflow-y: hidden;
+        width: 12rem;
     }
 
     &__active {
@@ -18,8 +20,13 @@
     }
 
     &__details {
-        padding: $s0 0 0 0;
+        padding: $s0 0;
+        font-size: $size-500;
         cursor: pointer;
+
+        @media (min-width: 40em) {
+            padding: $s0 0 0 0;
+        }
     }
 
     ul {

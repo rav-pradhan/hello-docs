@@ -7,10 +7,14 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: $size-500;
+    font-size: $size-400;
     color: $dark-grey;
     min-height: 100vh;
     text-rendering: optimizeSpeed;
+
+    @media (min-width: 40em) {
+        font-size: $size-500;
+    }
 }
 
 hr {
