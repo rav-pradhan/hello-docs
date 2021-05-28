@@ -1,24 +1,39 @@
 
+// using css custom properties for dark/light mode. Further research in due course
+:root {
+    --dark-grey: #373737;
+    --grey: #aaa;
+    --off-white: #f8f8ff;
+
+    --active-colour: var(--dark-grey);
+    --background-colour: var(--off-white);
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --active-colour: var(--off-white);
+        --background-colour: var(--dark-grey);
+    }
+
+}
+
 // variables
-@import "variables/colours";
 @import "variables/spacing";
 @import "variables/typographyScale";
 @import "typography";
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: $size-400;
-    color: $dark-grey;
+    background-color: var(--background-colour);
+    color: var(--active-colour);
     min-height: 100vh;
     text-rendering: optimizeSpeed;
-
-    @media (min-width: 40em) {
-        font-size: $size-500;
-    }
+    font-size: $size-500;
 }
 
 hr {
-    border: 1px dashed $dark-grey;
+    border: 1px dashed var(--active-colour);
     margin: $s1 0;
 }
 

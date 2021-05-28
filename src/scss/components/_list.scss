@@ -4,17 +4,16 @@
             li {
                 margin: 0;
                 list-style-type: square;
-                font-size: $size-400;
                 max-width: 30ch;
                 padding: $s-3 $s1;
             }
         }
 
         &--selected {
-            background-color: $dark-grey;
+            background-color: var(--active-colour);
 
             a {
-                color: white;
+                color: var(--background-colour);
                 text-decoration: none;
                 text-decoration-style: none;
             }

@@ -11,8 +11,8 @@
         line-height: 34px;
         border-radius: 50%;
         left: 0;
-        background-color: $dark-grey;
-        color: $off-white;
+        background-color: var(--active-colour);
+        color: var(--background-colour);
         height: 35px;
         width: 35px;
         font-size: $size-600;

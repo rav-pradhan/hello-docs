@@ -5,7 +5,7 @@
     padding-top: 0;
 
     a {
-        color: $dark-grey;
+        color: var(--active-colour);
     }
 
     > * + * {
@@ -13,12 +13,13 @@
     }
 
     &--header {
-        border-bottom: 2px solid $dark-grey;
+        border-bottom: 2px solid var(--active-colour);
+        padding-bottom: $s0;
     }
 
     &--footer {
         justify-content: center;
-        border-top: 2px solid $dark-grey;
+        border-top: 2px solid var(--active-colour);
         padding: 0;
     }
 }
