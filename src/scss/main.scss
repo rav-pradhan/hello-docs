@@ -27,7 +27,7 @@ main {
     padding: 0;
 
     @media (min-width: 40em) {
-        padding: 0 $s5;
+        max-width: 60ch;
     }
 }
 
@@ -42,6 +42,7 @@ main {
 
 // components
 @import "components/site-running";
+@import "components/toc";
 @import "components/collapsible";
 @import "components/topics";
 @import "components/list";

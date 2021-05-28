@@ -3,6 +3,7 @@ title: "Collapsible"
 metaDescription: "Collapsible"
 layout: "layouts/doc.html"
 ---
+## Usage
 
 A collapsible component can be used to show/hide information based on whether or not the user toggles it.
 
@@ -22,6 +23,8 @@ You could even add a small table...
 {% endcollapsible %}
 {% endraw %}
 ```
+
+## Example
 
 This will then render out the following:
 

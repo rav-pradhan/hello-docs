@@ -1,10 +1,14 @@
 const minifyHTML = require("./src/transforms/minifyHTML");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+
 const pluginPWA = require("eleventy-plugin-pwa");
 
 const warning = require("./src/_includes/shortcodes/warning");
 const collapsible = require("./src/_includes/shortcodes/collapsible");
+const toc = require("./src/_includes/shortcodes/toc");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -13,9 +17,20 @@ module.exports = (config) => {
         config.addTransform("htmlmin", minifyHTML);
     }
 
+    // Set Markdown config
+    const markdownLibrary = markdownIt({
+        html: true,
+        breaks: true,
+        linkify: true
+      }).use(markdownItAnchor, {
+        permalink: true,
+        permalinkClass: "direct-link",
+      });
+      config.setLibrary("md", markdownLibrary);
+
     // Plugins
     config.addPlugin(syntaxHighlight);
-    config.addPlugin(pluginPWA);
+    // config.addPlugin(pluginPWA);
     
     // Build topics collection
     config.addCollection("topics", (collection) => {
@@ -25,6 +40,7 @@ module.exports = (config) => {
 
     // Shortcodes
     config.addShortcode("warning", warning)
+    config.addShortcode("toc", toc)
     config.addPairedShortcode("collapsible", collapsible)
 
     // Misc config
@@ -57,10 +73,19 @@ const buildTopicsCollection = (collection) => {
 
 const buildChapterMetadata = (topicChapters, topicID) => {
     return topicChapters.map(chapter => {
+        // const tocEnabled = chapter.data.hasOwnProperty("toc") ? chapter.data.toc : true
+        // let tocSections = {}
+        // if (tocEnabled) {
+        //     tocSections = buildTableOfContents(chapter.template.inputContent)
+        // }
         return {
             ID: topicID,
             title: chapter.data.title,
-            url: chapter.url
+            url: chapter.url,
+            // toc: {
+            //     enabled: chapter.data.toc || true,
+            //     content: tocSections
+            // }
         }
     })
 }

@@ -55,7 +55,12 @@ a {
 	}
 
 	&:focus {
-		text-decoration-style: dashed;
+		text-decoration-style: none;
+		text-decoration: none;
+		background-color: $dark-grey;
+		color: $off-white !important;
+		outline: none;
+		box-shadow: 0px 0px 2px $dark-grey;
 	}
 }
 

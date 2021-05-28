@@ -1,0 +1,10 @@
+<section class="toc">
+    <strong>Table of Contents</strong>
+    <ol>
+        {% for entry in tocDetails %}
+        <li>
+            <a href="{{entry.link}}">{{ entry.title }}</a>
+        </li>
+        {% endfor %}
+    </ol>
+</section>
