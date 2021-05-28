@@ -30,7 +30,7 @@ module.exports = (config) => {
 
     // Plugins
     config.addPlugin(syntaxHighlight);
-    // config.addPlugin(pluginPWA);
+    config.addPlugin(pluginPWA);
     
     // Build topics collection
     config.addCollection("topics", (collection) => {
