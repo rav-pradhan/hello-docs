@@ -1,0 +1,1 @@
+module.exports = (code) => (`<div class="code-line">${code}</div>`)

@@ -8,6 +8,7 @@ const pluginPWA = require("eleventy-plugin-pwa");
 
 const warning = require("./src/_includes/shortcodes/warning");
 const collapsible = require("./src/_includes/shortcodes/collapsible");
+const codeLine = require("./src/_includes/shortcodes/code-line");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -39,6 +40,7 @@ module.exports = (config) => {
 
     // Shortcodes
     config.addShortcode("warning", warning)
+    config.addShortcode("code_line", codeLine)
     config.addPairedShortcode("collapsible", collapsible)
 
     // Misc config

@@ -51,6 +51,7 @@ li {
 a {
 	color: var(--active-colour);
 	text-decoration-style: solid;
+	text-underline-offset: .2em;
 	&:hover {
 		text-decoration-style: dashed;
 	}
@@ -67,9 +68,9 @@ a {
 
 code {
 	font-family: "SF Mono", menlo, inconsolata, monospace;
-	font-size: calc(0.9rem - 2px);
-	color: var(--active-colour);
-	background-color: var(--background-colour);
+	font-size: $size-400 * .8;
+	color: var(--background-colour);
+	background-color: var(--active-colour);
 	padding: 0.2rem 0.4rem;
 	border-radius: 2px;
 	-webkit-font-smoothing: antialiased;

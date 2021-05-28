@@ -3,7 +3,7 @@
 :root {
     --dark-grey: #373737;
     --grey: #aaa;
-    --off-white: #f8f8ff;
+    --off-white: #fafafa;
 
     --active-colour: var(--dark-grey);
     --background-colour: var(--off-white);
@@ -57,6 +57,7 @@ main {
 
 // components
 @import "components/site-running";
+@import "components/code-line";
 @import "components/toc";
 @import "components/collapsible";
 @import "components/topics";

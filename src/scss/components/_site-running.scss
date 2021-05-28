@@ -13,8 +13,13 @@
     }
 
     &--header {
-        border-bottom: 2px solid var(--active-colour);
-        padding-bottom: $s0;
+        border-bottom: 0;
+        padding-bottom: 0;
+
+        @media (min-width: 40em) {
+            padding-bottom: $s0;
+            border-bottom: 2px solid var(--active-colour);
+        }
     }
 
     &--footer {

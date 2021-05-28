@@ -18,10 +18,4 @@
             margin-top: 0;
         }
     }
-
-    @media (max-width: 35em) {
-        > * + * {
-            margin-top: 0;
-        }
-    }
 }

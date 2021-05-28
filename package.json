@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx gulp && concurrently \"npx gulp watch\" \"npx eleventy --serve\"",
+    "serve:docs": "npx eleventy --serve",
     "production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy"
   },
   "keywords": [],

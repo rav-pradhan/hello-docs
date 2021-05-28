@@ -1,7 +1,5 @@
 ---
 title: "Collapsible"
-metaDescription: "Collapsible"
-layout: "layouts/doc.html"
 ---
 ## Usage
 
