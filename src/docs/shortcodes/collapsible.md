@@ -39,3 +39,18 @@ You could even add a small table...
 | Bob  | 22  | Bloodborne     |
 
 {% endcollapsible %}
+
+Multiple collapsibles can also be used consecutively to create an accordion style component:
+
+{% collapsible 'Section One' %}
+Details pertaining to Section One.
+{% endcollapsible %}
+{% collapsible 'Section Two' %}
+Details pertaining to Section Two.
+{% endcollapsible %}
+{% collapsible 'Section Three' %}
+Details pertaining to Section Three.
+{% endcollapsible %}
+{% collapsible 'Section Four' %}
+Details pertaining to Section Four.
+{% endcollapsible %}

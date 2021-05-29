@@ -10,7 +10,7 @@ h4 {
 h1 {
 	font-size: $size-700;
 	margin: 0 0 2rem 0;
-	max-width: 20ch;
+	max-width: 25ch;
 }
 
 h2 {
@@ -82,8 +82,7 @@ small {
 pre {
 	font-size: $size-300 !important;
 	border-radius: 8px !important;
-	margin: 2.4rem 0 !important;
-	max-width: 80ch;
+	padding: 0;
 	code {
 		padding: 0;
 	}
@@ -93,11 +92,13 @@ code[class*="language-"],
 pre[class*="language-"] {
 	white-space: pre-wrap !important;
 	word-break: break-word;
+	margin: $s2 0 0 0 !important;
+	border-radius: 0 !important;
+	width: 100% !important;
 }
 
 blockquote {
 	border-left: 4px solid var(--active-colour);
-	margin: 2rem 0;
 	padding-left: 2rem;
 	padding-right: 2rem;
 	footer {

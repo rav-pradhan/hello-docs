@@ -1,13 +1,23 @@
 .collapsible {
-    margin: $s1 0;
     display: inline-block;
-    border-bottom: 2px solid var(--active-colour);
-    border-top: 2px solid var(--active-colour);
+    border-bottom: 1px solid var(--active-colour);
+    border-top: 1px solid var(--active-colour);
     padding: $s1 0;
     width: 100%;
 
-    &__summary {
+    & + &:not(:first-child) + &:not(:last-child) + .collapsible {
+        margin: 0;
+        border-bottom: 1px solid var(--active-colour);
+        border-top: none;
+    }
 
+    & + .collapsible {
+        margin: 0;
+        border-bottom: 1px solid var(--active-colour);
+        border-top: none;
+    }
+
+    &__summary {
         display: -webkit-flex;
         display: flex;
         -webkit-justify-content: space-between;
@@ -31,7 +41,7 @@
     }
 
     &__text {
-        padding: $s-1 0;
+        padding: $s2 0;
     }
 
     &[open] {

@@ -1,5 +1,5 @@
 .stack {
-    $stack-spacing: 1.5rem;
+    $stack-spacing: $s1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -16,6 +16,12 @@
     &--margin-free {
         > * + * {
             margin-top: 0;
+        }
+    }
+
+    &--margin-lg {
+        > * + * {
+            margin-top: $s2;
         }
     }
 }

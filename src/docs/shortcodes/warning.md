@@ -2,7 +2,8 @@
 title: "Warning"
 ---
 
-## Usage 
+## Usage
+
 You can embed a warning component straight into your Markdown by using the following syntax:
 
 ```shell
