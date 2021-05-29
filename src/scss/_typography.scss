@@ -33,6 +33,7 @@ p {
 }
 ul {
 	margin: 1.2rem 0;
+	list-style-type: disc;
 }
 ol {
 	margin: 1.2rem 0;
@@ -133,5 +134,13 @@ td {
 
 	h2 {
 		font-size: $size-600;
+	}
+}
+
+.header-anchor {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
 	}
 }

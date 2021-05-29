@@ -24,7 +24,8 @@ module.exports = (config) => {
         linkify: true
       }).use(markdownItAnchor, {
         permalink: true,
-        permalinkClass: "direct-link",
+        permalinkBefore: true,
+        permalinkSymbol: "#",
       });
       config.setLibrary("md", markdownLibrary);
 
@@ -35,7 +36,7 @@ module.exports = (config) => {
     // Build topics collection
     config.addCollection("topics", (collection) => {
         const topics = buildTopicsCollection(collection)
-        return sortAlphabeticallyByField(topics, "ID")
+        return sortByField(topics, "position")
     });
 
     // Shortcodes
@@ -66,6 +67,7 @@ const buildTopicsCollection = (collection) => {
             ID: topicID,
             title: topic.data.title,
             url: topic.url,
+            position: topic.data.position,
             chapters: buildChapterMetadata(topicChapters, topicID)
         }
     })
@@ -73,25 +75,17 @@ const buildTopicsCollection = (collection) => {
 
 const buildChapterMetadata = (topicChapters, topicID) => {
     return topicChapters.map(chapter => {
-        // const tocEnabled = chapter.data.hasOwnProperty("toc") ? chapter.data.toc : true
-        // let tocSections = {}
-        // if (tocEnabled) {
-        //     tocSections = buildTableOfContents(chapter.template.inputContent)
-        // }
         return {
             ID: topicID,
             title: chapter.data.title,
             url: chapter.url,
-            // toc: {
-            //     enabled: chapter.data.toc || true,
-            //     content: tocSections
-            // }
         }
     })
 }
 
-const sortAlphabeticallyByField = (topics = [], field = "") => {
+const sortByField = (topics = [], field = "") => {
+    console.log(topics)
     return topics.sort((a, b) => {
-        return a[field].localeCompare(b[field])
+        return a[field] - b[field]
     })
 }
