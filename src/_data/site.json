@@ -1,6 +1,5 @@
 {
     "name": "Hello Docs",
     "url": "https://hello-docs.netlify.app/",
-    "authorName": "Hello Docs",
-    "summary": "Hello Docs is a simple, minimalist documentation builder aimed for anyone who wants to create inclusive and accessible documetnation with just Markdown."
+    "summary": "A simple, minimalist documentation builder."
 }

@@ -62,21 +62,18 @@ const buildTopicsCollection = (collection) => {
         const topicChapters = collection.getFilteredByGlob(`./src/docs/${topic.fileSlug}/**.md`).filter(chapter => {
             return topic.fileSlug !== chapter.fileSlug
         })
-        const topicID = topic.inputPath.split("/")[3]
         return {
-            ID: topicID,
             title: topic.data.title,
             url: topic.url,
             position: topic.data.position,
-            chapters: buildChapterMetadata(topicChapters, topicID)
+            chapters: buildChapterMetadata(topicChapters)
         }
     })
 }
 
-const buildChapterMetadata = (topicChapters, topicID) => {
+const buildChapterMetadata = (topicChapters) => {
     return topicChapters.map(chapter => {
         return {
-            ID: topicID,
             title: chapter.data.title,
             url: chapter.url,
         }
