@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "npx gulp && concurrently \"npx gulp watch\" \"npx eleventy --serve\"",
     "serve:docs": "npx eleventy --serve",
-    "production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy"
+    "production": "NODE_ENV=production npx gulp && NODE_ENV=production npx eleventy",
+    "test": "ava",
+    "test:watch": "ava --watch"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
     "sass": "^1.32.10"
   },
   "devDependencies": {
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0"
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.0",
+    "ava": "^3.15.0"
   }
 }

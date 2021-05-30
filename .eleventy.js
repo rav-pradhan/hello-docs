@@ -81,7 +81,6 @@ const buildChapterMetadata = (topicChapters) => {
 }
 
 const sortByField = (topics = [], field = "") => {
-    console.log(topics)
     return topics.sort((a, b) => {
         return a[field] - b[field]
     })
