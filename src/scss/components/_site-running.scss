@@ -8,15 +8,23 @@
         color: var(--active-colour);
     }
 
-    > * + * {
-        margin: 0;
+    &__summary {
+        padding-top: $s0;
+
+        @media (min-width: 40em) {
+            padding-top: 0;
+        }
     }
 
     &--header {
+        flex-direction: column;
         border-bottom: 0;
         padding-bottom: 0;
+        align-items: center;
+        text-align: center;
 
         @media (min-width: 40em) {
+            flex-direction: row;
             padding-bottom: $s0;
             border-bottom: 2px solid var(--active-colour);
         }

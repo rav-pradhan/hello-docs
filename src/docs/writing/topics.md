@@ -19,7 +19,7 @@ The following is an example `docs` directory with two topics: systems thinking a
     ├── singleton.md
 ```
 
-### index.md
+### Index
 
 The `index.md` file within each directory is key. You only need to include some frontmatter, but this is what is used by Hello Docs to build the topics navigation properly.
 
