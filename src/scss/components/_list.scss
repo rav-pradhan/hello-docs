@@ -2,10 +2,16 @@
     &__entry {
         &--nested {
             li {
+
+                &:first-child {
+                    padding: 0 $s1 $s-3 $s1;
+                }
+                
                 margin: 0;
                 list-style-type: square;
                 max-width: 30ch;
                 padding: $s-3 $s1;
+                font-size: 1 * 0.92em;
             }
         }
 

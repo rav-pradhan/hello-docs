@@ -72,16 +72,18 @@ const buildTopicsCollection = (collection) => {
 }
 
 const buildChapterMetadata = (topicChapters) => {
-    return topicChapters.map(chapter => {
+    const chapterNav = topicChapters.map(chapter => {
         return {
             title: chapter.data.title,
             url: chapter.url,
+            position: chapter.data.position,
         }
     })
+    return sortByField(chapterNav, "position")
 }
 
-const sortByField = (topics = [], field = "") => {
-    return topics.sort((a, b) => {
+const sortByField = (array = [], field = "") => {
+    return array.sort((a, b) => {
         return a[field] - b[field]
     })
 }
