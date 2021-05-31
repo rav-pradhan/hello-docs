@@ -1,0 +1,20 @@
+.adjacent-chapters {
+    border-top: 2px solid var(--active-colour);
+    padding-top: $s0;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        list-style-type: none;
+        padding-inline-start: 0;
+
+        li:only-child#next {
+            margin-left: auto;
+        }
+
+        li:only-child#previous {
+            margin-right: auto;
+        }
+    }
+}

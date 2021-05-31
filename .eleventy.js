@@ -22,17 +22,17 @@ module.exports = (config) => {
         html: true,
         breaks: true,
         linkify: true
-      }).use(markdownItAnchor, {
+    }).use(markdownItAnchor, {
         permalink: true,
         permalinkBefore: true,
         permalinkSymbol: "#",
-      });
-      config.setLibrary("md", markdownLibrary);
+    });
+    config.setLibrary("md", markdownLibrary);
 
     // Plugins
     config.addPlugin(syntaxHighlight);
     config.addPlugin(pluginPWA);
-    
+
     // Build topics collection
     config.addCollection("topics", (collection) => {
         const topics = buildTopicsCollection(collection)
@@ -63,6 +63,7 @@ const buildTopicsCollection = (collection) => {
             return topic.fileSlug !== chapter.fileSlug
         })
         return {
+            ID: topic.fileSlug,
             title: topic.data.title,
             url: topic.url,
             position: topic.data.position,
@@ -71,15 +72,56 @@ const buildTopicsCollection = (collection) => {
     })
 }
 
-const buildChapterMetadata = (topicChapters) => {
-    const chapterNav = topicChapters.map(chapter => {
+const buildChapterMetadata = (chapters) => {
+    const chapterNav = chapters.map(chapter => {
         return {
             title: chapter.data.title,
             url: chapter.url,
             position: chapter.data.position,
         }
     })
-    return sortByField(chapterNav, "position")
+    const sortedChapterNav = sortByField(chapterNav, "position")
+
+    return sortedChapterNav.map(chapter => {
+        return {
+            ...chapter,
+            adjacentChapters: buildAdjacentChapters(sortedChapterNav, chapter.title)
+        }
+    })
+}
+
+const buildAdjacentChapters = (sortedChapters, chapterTitle) => {
+    if (sortedChapters.length === 1) return
+
+    for (const [index, chapter] of sortedChapters.entries()) {
+        if (chapterTitle === chapter.title) {
+            if (index === 0) {
+                const nextChapter = sortedChapters[index + 1]
+                return {
+                    next: setAdjacentChapter(nextChapter)
+                }
+            } else if (index === sortedChapters.length - 1) {
+                const previousChapter = sortedChapters[index - 1]
+                return {
+                    previous: setAdjacentChapter(previousChapter)
+                }
+            } else {
+                const nextChapter = sortedChapters[index + 1]
+                const previousChapter = sortedChapters[index - 1]
+                return {
+                    previous: setAdjacentChapter(previousChapter),
+                    next: setAdjacentChapter(nextChapter)
+                }
+            }
+        }
+    }
+}
+
+const setAdjacentChapter = (chapter) => {
+    return {
+        title: chapter.title,
+        url: chapter.url
+    }
 }
 
 const sortByField = (array = [], field = "") => {

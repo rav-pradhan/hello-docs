@@ -26,13 +26,13 @@
         @media (min-width: 40em) {
             flex-direction: row;
             padding-bottom: $s0;
-            border-bottom: 2px solid var(--active-colour);
+            border-bottom: 2px dashed var(--active-colour);
         }
     }
 
     &--footer {
         justify-content: center;
-        border-top: 2px solid var(--active-colour);
+        border-top: 2px dashed var(--active-colour);
         padding: 0;
     }
 }

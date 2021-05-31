@@ -3,12 +3,21 @@ const fs = require("fs")
 module.exports = {
     eleventyComputed: {
         tocDetails: data => {
-            if (data.toc || data.toc !== false) {
+            if (fileIsAChapter(data)) {
                 const pageData = readData(data.page.inputPath);
                 return buildTableOfContents(pageData)
             }
         },
+        topicID: data => {
+            if (fileIsAChapter(data)) {
+                return buildTopicID(data.page.filePathStem)
+            }
+        }
     }
+}
+
+const fileIsAChapter = (data) => {
+    return data.toc || data.toc !== false
 }
 
 const readData = (path) => {
@@ -35,6 +44,10 @@ const buildTableOfContents = (content) => {
         }
     }
     return tocEntries
+}
+
+const buildTopicID = (filePathStem) => {
+    return slugify(filePathStem.split("/")[2])
 }
 
 const slugify = (text) => {

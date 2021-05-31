@@ -6,13 +6,15 @@
     width: 100%;
 
     & + &:not(:first-child) + &:not(:last-child) + .collapsible {
-        margin: 0;
+        // override any margins applied externally (e.g. from stack primitive)
+        margin: 0 !important;
         border-bottom: 1px solid var(--active-colour);
         border-top: none;
     }
 
     & + .collapsible {
-        margin: 0;
+        // override any margins applied externally (e.g. from stack primitive)
+        margin: 0 !important;
         border-bottom: 1px solid var(--active-colour);
         border-top: none;
     }

@@ -42,15 +42,31 @@ You could even add a small table...
 
 Multiple collapsibles can also be used consecutively to create an accordion style component:
 
-{% collapsible 'Section One' %}
+```md
+{% raw %}{% collapsible 'Section One' %}
 Details pertaining to Section One.
 {% endcollapsible %}
+
 {% collapsible 'Section Two' %}
 Details pertaining to Section Two.
 {% endcollapsible %}
+
 {% collapsible 'Section Three' %}
 Details pertaining to Section Three.
 {% endcollapsible %}
-{% collapsible 'Section Four' %}
-Details pertaining to Section Four.
+{% endraw %}
+```
+
+{% collapsible 'Section One' %}
+Details pertaining to Section One.
 {% endcollapsible %}
+
+{% collapsible 'Section Two' %}
+Details pertaining to Section Two.
+{% endcollapsible %}
+
+{% collapsible 'Section Three' %}
+Details pertaining to Section Three.
+{% endcollapsible %}
+
+It should make no difference whether you include spacing between your collapsible shortcodes; the styling should ensure that each subsequent collapsible is styled appropriately.

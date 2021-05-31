@@ -1,0 +1,22 @@
+{% set currentTopicID = topicID %}
+
+<aside class="adjacent-chapters stack stack--margin-free">
+    {% for topic in collections.topics %}
+    {% if topic.ID == currentTopicID %}
+    <ul class="adjacent-chapters__list">
+        {% for chapter in topic.chapters %}
+        {% if chapter.title === title %}
+        {% if chapter.adjacentChapters.previous %}
+        <li id="previous"><a href={{chapter.adjacentChapters.previous.url}}>&#8592; {{
+                chapter.adjacentChapters.previous.title }}</a></li>
+        {% endif %}
+        {% if chapter.adjacentChapters.next %}
+        <li id="next"><a href={{chapter.adjacentChapters.next.url}}>{{ chapter.adjacentChapters.next.title }}
+                &#8594;</a></li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+</aside>

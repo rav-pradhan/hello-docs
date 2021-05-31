@@ -83,6 +83,7 @@ small {
 pre {
 	font-size: $size-300 !important;
 	border-radius: 8px !important;
+	background-color: var(--active-colour) !important;
 	padding: 0;
 	code {
 		padding: 0;
