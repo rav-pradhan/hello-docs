@@ -20,10 +20,6 @@
     }
 
     &__summary {
-        display: -webkit-flex;
-        display: flex;
-        -webkit-justify-content: space-between;
-        justify-content: space-between;
         list-style: none;
         cursor: pointer;
         font-size: $size-500;
@@ -39,6 +35,8 @@
 
         &::after {
             content: " ►";
+            text-align: right;
+            float: right;
         }
     }
 

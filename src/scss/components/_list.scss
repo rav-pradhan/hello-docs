@@ -1,12 +1,7 @@
 .list {
     &__entry {
         &--nested {
-            li {
-
-                &:first-child {
-                    padding: 0 $s1 $s-3 $s1;
-                }
-                
+            li {                
                 margin: 0;
                 list-style-type: square;
                 max-width: 30ch;
