@@ -70,8 +70,6 @@ a {
 code {
 	font-family: "SF Mono", menlo, inconsolata, monospace;
 	font-size: $size-400 * .8;
-	color: var(--background-colour) !important;
-	background-color: var(--active-colour) !important;
 	padding: 0.2rem 0.4rem;
 	border-radius: 2px;
 	-webkit-font-smoothing: antialiased;
@@ -83,7 +81,6 @@ small {
 pre {
 	font-size: $size-300 !important;
 	border-radius: 8px !important;
-	background-color: var(--active-colour) !important;
 	padding: 0;
 	code {
 		padding: 0;

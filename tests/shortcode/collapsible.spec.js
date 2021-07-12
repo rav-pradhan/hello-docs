@@ -9,7 +9,7 @@ test('that collapsible is correctly rendered', t => {
     const expected = `
 <details class="collapsible">
 <summary class="collapsible__summary">Test Heading</summary>
-<div class="collapsible__text">This is a test heading</div>
+This is a test heading
 </details>
 `
     t.is(result, expected)

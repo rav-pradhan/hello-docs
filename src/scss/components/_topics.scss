@@ -3,13 +3,11 @@
     background-color: var(--background-colour);
     border-right: 0;
     min-height: 0;
-    overflow-y: scroll;
     width: 100%;    
 
     @media (min-width: 40em) {
         border-bottom: 0;
         max-height: unset;
-        overflow-y: hidden;
         width: 13rem;
         border-top: 0;
     }
