@@ -7,12 +7,12 @@
         {% for chapter in topic.chapters %}
         {% if chapter.title === title %}
         {% if chapter.adjacentChapters.previous %}
-        <li id="previous"><a href={{chapter.adjacentChapters.previous.url}}>&#8592; {{
+        <li id="previous"><a href={{chapter.adjacentChapters.previous.url}}>Previous: {{
                 chapter.adjacentChapters.previous.title }}</a></li>
         {% endif %}
         {% if chapter.adjacentChapters.next %}
-        <li id="next"><a href={{chapter.adjacentChapters.next.url}}>{{ chapter.adjacentChapters.next.title }}
-                &#8594;</a></li>
+        <li id="next"><a href={{chapter.adjacentChapters.next.url}}>Next: {{ chapter.adjacentChapters.next.title }}
+                </a></li>
         {% endif %}
         {% endif %}
         {% endfor %}

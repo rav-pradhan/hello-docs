@@ -1,5 +1,6 @@
 const minifyHTML = require("./src/transforms/minifyHTML");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
@@ -9,6 +10,8 @@ const pluginPWA = require("eleventy-plugin-pwa");
 const warning = require("./src/_includes/shortcodes/warning");
 const collapsible = require("./src/_includes/shortcodes/collapsible");
 const codeLine = require("./src/_includes/shortcodes/code-line");
+
+const { DateTime } = require("luxon");
 
 const isProduction = process.env.NODE_ENV === "production";
 
@@ -29,9 +32,15 @@ module.exports = (config) => {
     });
     config.setLibrary("md", markdownLibrary);
 
+      // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+    config.addFilter('htmlDateString', (dateObj) => {
+        return DateTime.fromJSDate(dateObj).toFormat('yyyy-LL-dd');
+    });
+
     // Plugins
     config.addPlugin(syntaxHighlight);
     config.addPlugin(pluginPWA);
+    config.addPlugin(pluginRss);
 
     // Build topics collection
     config.addCollection("topics", (collection) => {
